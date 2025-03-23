@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="main.css">
+    <title>Карта изображений</title>
+
+    <script>
+        function changeColor() {
+            if (document.body.style.backgroundColor == '' 
+            || document.body.style.backgroundColor == 'rgb(255, 255, 255)') {
+                document.body.style.backgroundColor = '#E6E6FA'
+            } else {
+                document.body.style.backgroundColor = '#FFFFFF'
+            }
+        }
+
+        function showAlert() {
+            alert('Это Калиниский район. Не нажимайте сюда, здесь очень опасно!'); 
+        } 
+    </script>
+</head>
+<body>
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <h2 style="margin-bottom: 0%;">Карта города Чебоксары</h2>
+    <p>Нажмите на любой из районов города, чтобы узнать больше</p>
+
+    <p>
+        <img src="images/real_map.png" usemap="#map" alt="Навигация">
+    </p>
+    <p>
+        <map name="map"> 
+            <area shape="poly" alt="Заволжье" 
+                coords="58,61,325,62,327,25,444,29,441,51,633,56,775,135,915,
+                133,907,226,981,228,977,284,290,214,68,98,56,63" 
+                href="https://ru.wikipedia.org/wiki/Заволжье_(Чебоксары)">
+            <area shape="poly" alt="Московский район" 
+                coords="292,216,550,225,496,258,322,535,252,529,216,548,250,
+                504,209,425,229,400,166,383,139,420,82,427,118,338,211,345,259,339,289,215" 
+                href="moscow_district.html">
+            <area shape="poly" alt="Ленинский район" 
+                coords="514,261,568,376,555,400,600,488,555,500,605,656,478,580,450,604,
+                425,558,323,537,510,258" 
+                href="#lenin">
+            <area shape="poly" alt="Калининский район" 
+                coords="547,225,976,291,890,358,770,358,757,410,667,442,666,497,791,460,
+                684,539,678,576,596,596,558,507,606,492,576,374,527,257,550,228" 
+                href="javascript:void(1);"
+                onclick="showAlert()">
+            <area shape="circle" alt="Волга" 
+                coords="73,200,50" 
+                href="javascript:void(0);"
+                onclick="changeColor()">
+        </map>
+    </p>
+
+    <div id="lenin" style="margin-top: 10rem;">
+        <h2 style="margin-bottom: 0%;">Ленинский район</h2>
+        <div>
+            <p>Ленинский район - один из районов города Чебоксары.Типичный район
+                столичного города, в котором доминирует непроизводственная сфера. </p>
+            <p>В своей основе охватывает центральную часть города от Красной площади 
+                по улице Карла Маркса и проспекту Ленина до Привокзальной площади, 
+                жилые районы по улице Богдана Хмельницкого, Хевешской улице, водораздельные
+                холмы между реками: Сугутка, Трусиха и Малая Кувшинка.</p>
+            
+    </div>
+        
+    <img src="images/lenin.jpg" alt="Ленинский район">
+    </div>
+</div>
+
+</body>
+</html>
