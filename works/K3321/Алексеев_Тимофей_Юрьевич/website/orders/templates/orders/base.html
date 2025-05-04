@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Сайт для заказа логотипа{% endblock %}</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'orders/css/styles.css' %}">
 </head>
 <body>
-$END$
+
+    <header>
+        <h1>Сайт для заказа логотипа</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'order_logo' %}">Заказать логотип</a></li>
+                <li><a href="{% url 'about' %}">О разработке</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer style="margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em; text-align: center;">
+        <p style="margin-bottom: 3rem;"><a class="footer-back" href="{% url 'home' %}">Вернуться на главную</a></p>
+        <p>&copy; {{ current_year }} Сайт для дисциплины WEB-программирование. Все права защищены.</p>
+    </footer>
+
 </body>
 </html>

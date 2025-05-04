@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Компания по созданию логотипов</title>
-</head>
-<body>
-    <h1>Добро пожаловать в нашу компанию!</h1>
-    <p>Мы создаём уникальные логотипы под ваши нужды.</p>
-    <a href="{% url 'order_logo' %}">Заказать логотип</a>
-</body>
-</html>
+{% extends 'orders/base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div style="text-align:center">
+    <h2>Добро пожаловать в агенство заказа логотипов!</h2>
+</div>
+
+<p>Если вашему бизнесу или проекту необходим логотип, то наша компания готова создать вам таковой! Вы только взгляните,
+    в какой мастерской мы работаем!</p>
+
+<div style="display: flex; justify-content: center;">
+    <img src="{% static 'orders/images/master_room.jpg' %}" alt="Мастерская" style="max-width: 100%; height: auto;">
+</div>
+
+<p>Наши художники нарисуют вам логотип под любые ваши требования! Необходимо лишь заполнить форму, нажав кнопку ниже!</p>
+
+<div style="display: flex; justify-content: center;">
+    <button onclick="location.href='{% url 'order_logo' %}'" class="button-great">Перейти к заказу логотипа</button>
+</div>
+{% endblock %}

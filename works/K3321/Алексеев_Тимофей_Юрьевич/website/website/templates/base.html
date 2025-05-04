@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Сайт заказа логотипа{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-$END$
+
+    <header>
+        <h1>Сайт заказа логотипа</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'order_logo' %}">Заказать логотип</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer style="margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em; text-align: center;">
+        <p>&copy; {{ current_year }} Мой сайт. Все права защищены.</p>
+    </footer>
+
 </body>
 </html>
