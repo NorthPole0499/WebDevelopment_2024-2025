@@ -3,7 +3,7 @@ from django.db import models
 
 class LogoOrder(models.Model):
     full_name = models.CharField("Фамилия Имя", max_length=200)
-    contact = models.TextField("Контактный телефон или Телеграмм")
+    contact = models.CharField("Контактный телефон или Телеграмм", max_length=200)
     description = models.TextField("Какой логотип желаете заказать?")
     created_at = models.DateTimeField(auto_now_add=True)
 
