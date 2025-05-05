@@ -9,7 +9,7 @@ class LogoOrderForm(forms.ModelForm):
         labels = {
             'full_name': 'Фамилия Имя',
             'contact': 'Контактный телефон или Телеграм',
-            'description': 'Что желаете?',
+            'description': 'Какие пожелания для логотипа?',
         }
         widgets = {
             'description': forms.Textarea(attrs={'rows':4}),

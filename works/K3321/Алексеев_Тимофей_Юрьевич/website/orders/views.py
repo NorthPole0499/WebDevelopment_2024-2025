@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
 from .forms import LogoOrderForm
+from .models import LogoOrder
 
 
 def home(request):
@@ -8,7 +9,13 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'orders/about.html', {'current_year': datetime.now().year})
+    logo_order_count = LogoOrder.objects.count()
+
+    context = {
+        'logo_order_count': logo_order_count,
+        'current_year': datetime.now().year,
+    }
+    return render(request, 'orders/about.html', context)
 
 
 def order_logo(request):
